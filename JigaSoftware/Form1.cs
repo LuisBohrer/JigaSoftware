@@ -71,26 +71,6 @@ namespace JigaSoftware
 
             UpdatePorts();
             bxPort.SelectedIndex = 0;
-            foreach(var baudRate in BaudRates)
-            {
-                bxBaudRate.Items.Add(baudRate);
-            }
-            bxBaudRate.SelectedIndex = 1;
-            foreach(var numBits in NumBits)
-            {
-                bxNumBits.Items.Add(numBits);
-            }
-            bxNumBits.SelectedIndex = 1;
-            foreach (var stopBits in StopBitsArray)
-            {
-                bxStopBits.Items.Add(stopBits);
-            }
-            bxStopBits.SelectedIndex = 1;
-            foreach(var parity in Paritys)
-            {
-                bxParity.Items.Add(parity);
-            }
-            bxParity.SelectedIndex = 0;
         }
 
         private void UpdatePorts()
@@ -122,46 +102,6 @@ namespace JigaSoftware
                 return;
             }
 
-            try
-            {
-                Serial.BaudRate = int.Parse(bxBaudRate.Text.ToString());
-            }
-            catch
-            {
-                txtMessageBox.AppendText(Environment.NewLine + "Erro ao definir o baud rate");
-                return;
-            }
-
-            try
-            {
-                Serial.DataBits = int.Parse(bxNumBits.Text.ToString());
-            }
-            catch
-            {
-                txtMessageBox.AppendText(Environment.NewLine + "Erro ao definir o os stop bits");
-                return;
-            }
-
-            try
-            {
-                Serial.StopBits = (StopBits) bxStopBits.SelectedIndex;
-            }
-            catch
-            {
-                txtMessageBox.AppendText(Environment.NewLine + "Erro ao definir o os stop bits");
-                return;
-            }
-
-            try
-            {
-                Serial.Parity = (Parity) bxParity.SelectedIndex;
-            }
-            catch
-            {
-                txtMessageBox.AppendText(Environment.NewLine + "Erro ao definir a paridade");
-                return;
-            }
-
             if (!Serial.IsOpen)
             {
                 try
@@ -178,15 +118,11 @@ namespace JigaSoftware
             txtMessageBox.AppendText(Environment.NewLine + "Porta: " + Serial.PortName);
             txtMessageBox.AppendText(Environment.NewLine + "BaudRate: " + Serial.BaudRate);
             txtMessageBox.AppendText(Environment.NewLine + "Num Bits: " + Serial.DataBits);
-            txtMessageBox.AppendText(Environment.NewLine + "Stop Bits: " + Serial.StopBits);
             txtMessageBox.AppendText(Environment.NewLine + "Parity: " + Serial.Parity);
+            txtMessageBox.AppendText(Environment.NewLine + "Stop Bits: " + Serial.StopBits);
 
             btnRefreshPorts.Enabled = false;
             bxPort.Enabled = false;
-            bxBaudRate.Enabled = false;
-            bxNumBits.Enabled = false;
-            bxStopBits.Enabled = false;
-            bxParity.Enabled = false;
 
             btnConnect.Text = "Disconnect";
         }
@@ -198,13 +134,9 @@ namespace JigaSoftware
             }
             btnRefreshPorts.Enabled = true;
             bxPort.Enabled = true;
-            bxBaudRate.Enabled = true;
-            bxNumBits.Enabled = true;
-            bxStopBits.Enabled = true;
-            bxParity.Enabled = true;
             btnConnect.Text = "Connect";
 
-            txtMessageBox.AppendText(Environment.NewLine + "Serial desconectada");
+            txtMessageBox.AppendText(Environment.NewLine + "Serial fechada");
         }
         private void btnConnect_Click(object sender, EventArgs e)
         {
@@ -222,8 +154,16 @@ namespace JigaSoftware
         {
             if (Serial.IsOpen)
             {
-                string msg = "UU" + (char)0x05 + (char)0x05 + "Teste" + (char)0x23 + (char)0x23;
+                string msg = "##" + (char)0x05 + (char)0x05 + "Teste" + (char)0x40;
                 Serial.Write(msg);
+            }
+        }
+
+        private void Form_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (Serial.IsOpen)
+            {
+                Serial.Close();
             }
         }
     }

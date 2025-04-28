@@ -11,12 +11,12 @@ namespace JigaSoftware
         public byte opCode;
         public byte dataFrameSize;
         public Byte[] dataFrame = new Byte[100];
-        public byte startByte = 0x55;
-        public byte endByte = 0x23;
+        public byte startByte = 0x23;
+        public byte endByte = 0x40;
 
         public byte[] commandParse(byte opcode, params byte[] parametros)
         {
-            Byte[] dataParsed = new Byte[6 + parametros.Length];
+            Byte[] dataParsed = new Byte[5 + parametros.Length];
 
             dataParsed[0] = startByte;
             dataParsed[1] = startByte;
@@ -26,7 +26,6 @@ namespace JigaSoftware
             {
                 dataParsed[4 + i] = parametros[i];
             }
-            dataParsed[dataParsed.Length - 2] = endByte;
             dataParsed[dataParsed.Length - 1] = endByte;
 
             return dataParsed;
@@ -35,7 +34,7 @@ namespace JigaSoftware
 
         public bool commandUnParse(byte[] frame)
         {
-            if(frame.Length < 5)
+            if(frame.Length < 4)
             {
                 return false;
             }
@@ -49,7 +48,7 @@ namespace JigaSoftware
                 {
                     opCodeIndex = i + 2;
                 }
-                else if (frame[i] == endByte && frame[i + 1] == endByte && i > 2)
+                else if (frame[i] == endByte && i > 2)
                 {
                     dataFrameEndIndex = i;
                     break;
@@ -65,7 +64,7 @@ namespace JigaSoftware
 
             opCode = frame[opCodeIndex];
             dataFrameSize = frame[opCodeIndex + 1];
-            if (frame[opCodeIndex + dataFrameSize + 2] == endByte && frame[opCodeIndex + dataFrameSize + 3] == endByte)
+            if (frame[opCodeIndex + dataFrameSize + 2] == endByte)
             {
                 for (int i = 0; i < dataFrameSize; i++)
                 {
