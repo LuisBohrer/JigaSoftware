@@ -36,6 +36,13 @@ namespace JigaSoftware
             LOGS,
         }
 
+        const UInt16 MIN_BOARD_READ = 0;
+        const UInt16 MAX_BOARD_READ = 4095;
+        const float MIN_VOLTAGE_READ = 0.0f;
+        const float MAX_VOLTAGE_READ = 13.3f;
+        const float MIN_CURRENT_READ = 0.0f;
+        const float MAX_CURRENT_READ = 2944.0f;
+
         private void SendCommandSerial(byte opcode, params byte[] parametros)
         {
             byte[] frame = serialProtocol.commandParse(opcode, parametros);
@@ -96,6 +103,11 @@ namespace JigaSoftware
             }
         }
 
+        public float changeScales(float value, float fromMin, float fromMax, float toMin, float toMax)
+        {
+            return (float)(toMin + (value - fromMin) / (fromMax - fromMin) * (toMax - toMin));
+        }
+
         public void treatSerialMessage()
         {
             const int NUMBER_OF_CHANNELS = 10;
@@ -137,11 +149,11 @@ namespace JigaSoftware
                         UInt16 value = System.BitConverter.ToUInt16(serialProtocol.dataFrame, i*2);
                         if (i < 10)
                         {
-                            voltageReads[i] = (float)(0.0 + (value - 0.0)/(4095.0 - 0.0) * (13.3 - 0.0));
+                            voltageReads[i] = changeScales(value, MIN_BOARD_READ, MAX_BOARD_READ, MIN_VOLTAGE_READ, MAX_VOLTAGE_READ);
                         }
                         else
                         {
-                            currentReads[i - 10] = (float)(0.0 + (value - 0.0) / (4095.0 - 0.0) * (2944.0 - 0.0));
+                            currentReads[i - 10] = changeScales(value, MIN_BOARD_READ, MAX_BOARD_READ, MIN_CURRENT_READ, MAX_CURRENT_READ);
                         }
                     }
                     this.Invoke(updateReads);

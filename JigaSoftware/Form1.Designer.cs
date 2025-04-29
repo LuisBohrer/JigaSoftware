@@ -36,7 +36,6 @@
             this.btnConnect = new System.Windows.Forms.Button();
             this.btnRefreshPorts = new System.Windows.Forms.Button();
             this.txtMessageBox = new System.Windows.Forms.TextBox();
-            this.btnTest = new System.Windows.Forms.Button();
             this.requestReadsTimer = new System.Windows.Forms.Timer(this.components);
             this.txtVoltage0 = new System.Windows.Forms.TextBox();
             this.txtVoltage1 = new System.Windows.Forms.TextBox();
@@ -152,16 +151,6 @@
             this.txtMessageBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtMessageBox.Size = new System.Drawing.Size(463, 247);
             this.txtMessageBox.TabIndex = 1;
-            // 
-            // btnTest
-            // 
-            this.btnTest.Location = new System.Drawing.Point(323, 365);
-            this.btnTest.Name = "btnTest";
-            this.btnTest.Size = new System.Drawing.Size(75, 23);
-            this.btnTest.TabIndex = 2;
-            this.btnTest.Text = "Test";
-            this.btnTest.UseVisualStyleBackColor = true;
-            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
             // 
             // requestReadsTimer
             // 
@@ -620,41 +609,49 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(323, 201);
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.button1.Location = new System.Drawing.Point(224, 211);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(84, 23);
             this.button1.TabIndex = 4;
-            this.button1.Text = "V min";
+            this.button1.Text = "Calibrar 0V";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(323, 230);
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.button2.Location = new System.Drawing.Point(314, 211);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(84, 23);
             this.button2.TabIndex = 5;
-            this.button2.Text = "V max";
+            this.button2.Text = "Calibrar 13.3V";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(323, 294);
+            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.button3.Location = new System.Drawing.Point(314, 240);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(84, 23);
             this.button3.TabIndex = 7;
-            this.button3.Text = "curr max";
+            this.button3.Text = "Calibrar 2.9A";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(323, 265);
+            this.button4.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.button4.Location = new System.Drawing.Point(224, 240);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.Size = new System.Drawing.Size(84, 23);
             this.button4.TabIndex = 6;
-            this.button4.Text = "curr min";
+            this.button4.Text = "Calibrar 0A";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -668,7 +665,6 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.btnTest);
             this.Controls.Add(this.txtMessageBox);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form";
@@ -692,7 +688,6 @@
         private System.Windows.Forms.Button btnRefreshPorts;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtMessageBox;
-        private System.Windows.Forms.Button btnTest;
         private System.Windows.Forms.Timer requestReadsTimer;
         private System.Windows.Forms.TextBox txtVoltage0;
         private System.Windows.Forms.TextBox txtVoltage8;
