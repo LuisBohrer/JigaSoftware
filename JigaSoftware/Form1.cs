@@ -27,13 +27,12 @@ namespace JigaSoftware
             INVALID_REQUEST,
             CALIBRATE_VOLTAGE_MIN,
             CALIBRATE_VOLTAGE_MAX,
-            CALIBRATE_CURRRENT_MIN,
-            CALIBRATE_CURRRENT_MAX,
+            CALIBRATE_CURRENT_MIN,
+            CALIBRATE_CURRENT_MAX,
             SEND_VOLTAGE_READS = 22,
             SEND_CURRENT_READS,
             SEND_ALL_READS,
             SET_MODBUS_CONFIG,
-            CHANGE_SCALE,
             LOGS,
         }
 
@@ -129,20 +128,20 @@ namespace JigaSoftware
             switch (serialProtocol.opCode)
             {
                 case (int)JigaOpcodes.SEND_ALL_READS:
-                    if(serialProtocol.dataFrameSize/4 < NUMBER_OF_CHANNELS * 2)
+                    if(serialProtocol.dataFrameSize/2 < NUMBER_OF_CHANNELS * 2)
                     {
                         return;
                     }
-                    for(int i = 0; i < serialProtocol.dataFrameSize/4; i++)
+                    for(int i = 0; i < serialProtocol.dataFrameSize/2; i++)
                     {
-                        float value = System.BitConverter.ToSingle(serialProtocol.dataFrame, i*4);
-                        if (i % 2 == 0)
+                        UInt16 value = System.BitConverter.ToUInt16(serialProtocol.dataFrame, i*2);
+                        if (i < 10)
                         {
-                            voltageReads[i / 2] = (float)Math.Round(value, 2);
+                            voltageReads[i] = (float)(0.0 + (value - 0.0)/(4095.0 - 0.0) * (13.3 - 0.0));
                         }
                         else
                         {
-                            currentReads[i / 2] = (float)Math.Round(value, 2);
+                            currentReads[i - 10] = (float)(0.0 + (value - 0.0) / (4095.0 - 0.0) * (2944.0 - 0.0));
                         }
                     }
                     this.Invoke(updateReads);
@@ -262,6 +261,26 @@ namespace JigaSoftware
         private void requestReadsTimer_Tick(object sender, EventArgs e)
         {
             SendCommandSerial((byte)JigaOpcodes.SEND_ALL_READS);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_VOLTAGE_MIN);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_VOLTAGE_MAX);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_CURRENT_MIN);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_CURRENT_MAX);
         }
     }
 }
