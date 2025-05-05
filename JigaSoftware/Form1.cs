@@ -94,7 +94,8 @@ namespace JigaSoftware
 
             MethodInvoker printMessage = delegate ()
             {
-                txtMessageBox.AppendText(Environment.NewLine + System.Text.Encoding.UTF8.GetString(serialDataRcv, 0, dataSize));
+                //txtMessageBox.AppendText(Environment.NewLine + System.Text.Encoding.UTF8.GetString(serialDataRcv, 0, dataSize));
+                txtMessageBox.AppendText(Environment.NewLine + "Mensagem recebida!");
             };
 
             if (this.InvokeRequired)
