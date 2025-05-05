@@ -29,6 +29,10 @@ namespace JigaSoftware
             CALIBRATE_VOLTAGE_MAX,
             CALIBRATE_CURRENT_MIN,
             CALIBRATE_CURRENT_MAX,
+            RESET_VOLTAGE_MIN,
+            RESET_VOLTAGE_MAX,
+            RESET_CURRENT_MIN,
+            RESET_CURRENT_MAX,
             SEND_VOLTAGE_READS = 22,
             SEND_CURRENT_READS,
             SEND_ALL_READS,
@@ -293,6 +297,26 @@ namespace JigaSoftware
         private void button3_Click(object sender, EventArgs e)
         {
             SendCommandSerial((byte)JigaOpcodes.CALIBRATE_CURRENT_MAX);
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            SendCommandSerial((byte)JigaOpcodes.RESET_VOLTAGE_MIN);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            SendCommandSerial((byte)JigaOpcodes.RESET_VOLTAGE_MAX);
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            SendCommandSerial((byte)JigaOpcodes.RESET_CURRENT_MIN);
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            SendCommandSerial((byte)JigaOpcodes.RESET_CURRENT_MAX);
         }
     }
 }
