@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form));
             this.Serial = new System.IO.Ports.SerialPort(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -81,12 +82,12 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -123,6 +124,7 @@
             // 
             // bxPort
             // 
+            this.bxPort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.bxPort.FormattingEnabled = true;
             this.bxPort.Location = new System.Drawing.Point(84, 21);
             this.bxPort.Name = "bxPort";
@@ -656,17 +658,17 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = " ";
             // 
-            // button6
+            // button7
             // 
-            this.button6.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.button6.Location = new System.Drawing.Point(110, 43);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(84, 23);
-            this.button6.TabIndex = 9;
-            this.button6.Text = "Resetar 2.9A";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.button7.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.button7.Location = new System.Drawing.Point(18, 14);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(84, 23);
+            this.button7.TabIndex = 10;
+            this.button7.Text = "Resetar 0V";
+            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
@@ -680,17 +682,29 @@
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
-            // button2
+            // button5
             // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.button2.Location = new System.Drawing.Point(293, 14);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(84, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Calibrar 13.3V";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button5.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.button5.Location = new System.Drawing.Point(110, 14);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(84, 23);
+            this.button5.TabIndex = 8;
+            this.button5.Text = "Resetar 13.3V";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button6
+            // 
+            this.button6.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.button6.Location = new System.Drawing.Point(110, 43);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(84, 23);
+            this.button6.TabIndex = 9;
+            this.button6.Text = "Resetar 2.9A";
+            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button1
             // 
@@ -704,29 +718,17 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button5
+            // button2
             // 
-            this.button5.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.button5.Location = new System.Drawing.Point(110, 14);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(84, 23);
-            this.button5.TabIndex = 8;
-            this.button5.Text = "Resetar 13.3V";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button7
-            // 
-            this.button7.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.button7.Location = new System.Drawing.Point(18, 14);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(84, 23);
-            this.button7.TabIndex = 10;
-            this.button7.Text = "Resetar 0V";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.button2.Location = new System.Drawing.Point(293, 14);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(84, 23);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Calibrar 13.3V";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // groupBox4
             // 
@@ -747,6 +749,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form";
             this.Text = "Jiga";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_FormClosing);
