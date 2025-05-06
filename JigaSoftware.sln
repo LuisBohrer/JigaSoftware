@@ -5,6 +5,8 @@ VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JigaSoftware", "JigaSoftware\JigaSoftware.csproj", "{3FC2D602-901A-41E5-AB88-520F9C5B6E7E}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupJiga", "SetupJiga\SetupJiga.vdproj", "{738935F2-071B-4967-8078-D735FA453D77}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{3FC2D602-901A-41E5-AB88-520F9C5B6E7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3FC2D602-901A-41E5-AB88-520F9C5B6E7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3FC2D602-901A-41E5-AB88-520F9C5B6E7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{738935F2-071B-4967-8078-D735FA453D77}.Debug|Any CPU.ActiveCfg = Debug
+		{738935F2-071B-4967-8078-D735FA453D77}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
