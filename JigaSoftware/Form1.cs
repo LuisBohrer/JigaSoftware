@@ -33,7 +33,7 @@ namespace JigaSoftware
             RESET_VOLTAGE_MAX,
             RESET_CURRENT_MIN,
             RESET_CURRENT_MAX,
-            SEND_VOLTAGE_READS = 22,
+            SEND_VOLTAGE_READS,
             SEND_CURRENT_READS,
             SEND_ALL_READS,
             SET_MODBUS_CONFIG,
@@ -66,7 +66,7 @@ namespace JigaSoftware
             }
 
             int dataSize = Serial.BytesToRead;
-            for(int i = 0; i < dataSize; i++)
+            for (int i = 0; i < dataSize; i++)
             {
                 serialDataRcv[i] = Convert.ToByte(Serial.ReadByte());
             }
@@ -145,13 +145,13 @@ namespace JigaSoftware
             switch (serialProtocol.opCode)
             {
                 case (int)JigaOpcodes.SEND_ALL_READS:
-                    if(serialProtocol.dataFrameSize/2 < NUMBER_OF_CHANNELS * 2)
+                    if (serialProtocol.dataFrameSize / 2 < NUMBER_OF_CHANNELS * 2)
                     {
                         return;
                     }
-                    for(int i = 0; i < serialProtocol.dataFrameSize/2; i++)
+                    for (int i = 0; i < serialProtocol.dataFrameSize / 2; i++)
                     {
-                        UInt16 value = System.BitConverter.ToUInt16(serialProtocol.dataFrame, i*2);
+                        UInt16 value = System.BitConverter.ToUInt16(serialProtocol.dataFrame, i * 2);
                         if (i < 10)
                         {
                             voltageReads[i] = changeScales(value, MIN_BOARD_READ, MAX_BOARD_READ, MIN_VOLTAGE_READ, MAX_VOLTAGE_READ);
@@ -231,7 +231,7 @@ namespace JigaSoftware
         }
         private void DisconnectSerial()
         {
-            if(Serial.IsOpen)
+            if (Serial.IsOpen)
             {
                 Serial.Close();
             }
@@ -243,7 +243,7 @@ namespace JigaSoftware
         }
         private void btnConnect_Click(object sender, EventArgs e)
         {
-            if(btnConnect.Text == "Connect")
+            if (btnConnect.Text == "Connect")
             {
                 ConnectSerial();
             }
@@ -258,10 +258,10 @@ namespace JigaSoftware
             if (Serial.IsOpen)
             {
                 byte[] testReads = new byte[80];
-                for(int i = 0; i < 10; i++)
+                for (int i = 0; i < 10; i++)
                 {
-                    byte[] byteList = System.BitConverter.GetBytes((float)10.1*i);
-                    byteList.CopyTo(testReads, i*4);
+                    byte[] byteList = System.BitConverter.GetBytes((float)10.1 * i);
+                    byteList.CopyTo(testReads, i * 4);
                 }
                 SendCommandSerial((byte)JigaOpcodes.SEND_ALL_READS, testReads);
             }

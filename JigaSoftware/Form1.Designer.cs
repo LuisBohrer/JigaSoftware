@@ -154,7 +154,7 @@
             // txtMessageBox
             // 
             this.txtMessageBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtMessageBox.Location = new System.Drawing.Point(6, 13);
+            this.txtMessageBox.Location = new System.Drawing.Point(6, 14);
             this.txtMessageBox.Multiline = true;
             this.txtMessageBox.Name = "txtMessageBox";
             this.txtMessageBox.ReadOnly = true;
@@ -735,7 +735,7 @@
             this.groupBox4.Controls.Add(this.txtMessageBox);
             this.groupBox4.Location = new System.Drawing.Point(419, 141);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(449, 135);
+            this.groupBox4.Size = new System.Drawing.Size(448, 136);
             this.groupBox4.TabIndex = 9;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Logs";
@@ -744,7 +744,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(886, 291);
+            this.ClientSize = new System.Drawing.Size(875, 287);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
