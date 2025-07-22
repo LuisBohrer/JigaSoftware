@@ -18,7 +18,8 @@ namespace JigaSoftware
     {
         SerialProtocol serialProtocol = new SerialProtocol();
 
-        public Byte[] serialDataRcv = new Byte[150];
+        const UInt16 serialDataSize = 150;
+        public Byte[] serialDataRcv = new Byte[serialDataSize];
         public bool newDataFlag;
 
         public enum JigaOpcodes
@@ -57,6 +58,18 @@ namespace JigaSoftware
             }
         }
 
+        public void SerialDataProblemHandler(object sender, SerialPinChangedEventArgs e)
+        {
+            if (btnConnect.Text == "Connect")
+            {
+                ConnectSerial();
+            }
+            else
+            {
+                DisconnectSerial();
+            }
+        }
+
         public void SerialDataReceivedHandler(object sender, SerialDataReceivedEventArgs e)
         {
             System.Threading.Thread.Sleep(500);
@@ -66,7 +79,7 @@ namespace JigaSoftware
             }
 
             int dataSize = Serial.BytesToRead;
-            for (int i = 0; i < dataSize; i++)
+            for (int i = 0; i < dataSize && i < serialDataSize; i++)
             {
                 serialDataRcv[i] = Convert.ToByte(Serial.ReadByte());
             }
@@ -282,22 +295,22 @@ namespace JigaSoftware
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_VOLTAGE_MIN);
+            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_VOLTAGE_MIN, 0);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_VOLTAGE_MAX);
+            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_VOLTAGE_MAX, 1);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_CURRENT_MIN);
+            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_CURRENT_MIN, 2);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_CURRENT_MAX);
+            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_CURRENT_MAX, 3);
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -318,6 +331,206 @@ namespace JigaSoftware
         private void button6_Click(object sender, EventArgs e)
         {
             SendCommandSerial((byte)JigaOpcodes.RESET_CURRENT_MAX);
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_VOLTAGE_MIN, 0);
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_VOLTAGE_MAX, 0);
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_VOLTAGE_MIN, 1);
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_VOLTAGE_MIN, 2);
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_VOLTAGE_MIN, 3);
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_VOLTAGE_MIN, 4);
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_VOLTAGE_MIN, 5);
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_VOLTAGE_MIN, 6);
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_VOLTAGE_MIN, 7);
+        }
+
+        private void button25_Click(object sender, EventArgs e)
+        {
+            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_VOLTAGE_MIN, 8);
+        }
+
+        private void button27_Click(object sender, EventArgs e)
+        {
+            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_VOLTAGE_MIN, 9);
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_VOLTAGE_MAX, 1);
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_VOLTAGE_MAX, 2);
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_VOLTAGE_MAX, 3);
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_VOLTAGE_MAX, 4);
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_VOLTAGE_MAX, 5);
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_VOLTAGE_MAX, 6);
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_VOLTAGE_MAX, 7);
+        }
+
+        private void button26_Click(object sender, EventArgs e)
+        {
+            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_VOLTAGE_MAX, 8);
+        }
+
+        private void button28_Click(object sender, EventArgs e)
+        {
+            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_VOLTAGE_MAX, 9);
+        }
+
+        private void button47_Click(object sender, EventArgs e)
+        {
+            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_CURRENT_MIN, 0);
+        }
+
+        private void button48_Click(object sender, EventArgs e)
+        {
+            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_CURRENT_MAX, 0);
+        }
+
+        private void button46_Click(object sender, EventArgs e)
+        {
+            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_CURRENT_MAX, 1);
+        }
+
+        private void button44_Click(object sender, EventArgs e)
+        {
+            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_CURRENT_MAX, 2);
+        }
+
+        private void button42_Click(object sender, EventArgs e)
+        {
+            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_CURRENT_MAX, 3);
+        }
+
+        private void button40_Click(object sender, EventArgs e)
+        {
+            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_CURRENT_MAX, 4);
+        }
+
+        private void button38_Click(object sender, EventArgs e)
+        {
+            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_CURRENT_MAX, 5);
+        }
+
+        private void button36_Click(object sender, EventArgs e)
+        {
+            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_CURRENT_MAX, 6);
+        }
+
+        private void button34_Click(object sender, EventArgs e)
+        {
+            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_CURRENT_MAX, 7);
+        }
+
+        private void button32_Click(object sender, EventArgs e)
+        {
+            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_CURRENT_MAX, 8);
+        }
+
+        private void button30_Click(object sender, EventArgs e)
+        {
+            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_CURRENT_MAX, 9);
+        }
+
+        private void button45_Click(object sender, EventArgs e)
+        {
+            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_CURRENT_MIN, 1);
+        }
+
+        private void button43_Click(object sender, EventArgs e)
+        {
+            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_CURRENT_MIN, 2);
+        }
+
+        private void button41_Click(object sender, EventArgs e)
+        {
+            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_CURRENT_MIN, 3);
+        }
+
+        private void button39_Click(object sender, EventArgs e)
+        {
+            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_CURRENT_MIN, 4);
+        }
+
+        private void button37_Click(object sender, EventArgs e)
+        {
+            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_CURRENT_MIN, 5);
+        }
+
+        private void button35_Click(object sender, EventArgs e)
+        {
+            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_CURRENT_MIN, 6);
+        }
+
+        private void button33_Click(object sender, EventArgs e)
+        {
+            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_CURRENT_MIN, 7);
+        }
+
+        private void button31_Click(object sender, EventArgs e)
+        {
+            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_CURRENT_MIN, 8);
+        }
+
+        private void button29_Click(object sender, EventArgs e)
+        {
+            SendCommandSerial((byte)JigaOpcodes.CALIBRATE_CURRENT_MIN, 9);
         }
     }
 }
