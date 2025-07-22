@@ -138,7 +138,6 @@
             // Serial
             // 
             this.Serial.BaudRate = 115200;
-            this.Serial.PinChanged += new System.IO.Ports.SerialPinChangedEventHandler(this.SerialDataProblemHandler);
             this.Serial.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.SerialDataReceivedHandler);
             // 
             // groupBox1

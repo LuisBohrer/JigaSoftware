@@ -58,18 +58,6 @@ namespace JigaSoftware
             }
         }
 
-        public void SerialDataProblemHandler(object sender, SerialPinChangedEventArgs e)
-        {
-            if (btnConnect.Text == "Connect")
-            {
-                ConnectSerial();
-            }
-            else
-            {
-                DisconnectSerial();
-            }
-        }
-
         public void SerialDataReceivedHandler(object sender, SerialDataReceivedEventArgs e)
         {
             System.Threading.Thread.Sleep(500);
