@@ -276,6 +276,14 @@ namespace JigaSoftware
             }
         }
 
+        private void reconnectTimer_Tick(object sender, EventArgs e)
+        {
+            if(btnConnect.Text == "Disconnect" && !Serial.IsOpen)
+            {
+                ConnectSerial();
+            }
+        }
+
         private void requestReadsTimer_Tick(object sender, EventArgs e)
         {
             SendCommandSerial((byte)JigaOpcodes.SEND_ALL_READS);

@@ -129,6 +129,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.reconnectTimer = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -1300,6 +1301,11 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Logs";
             // 
+            // reconnectTimer
+            // 
+            this.reconnectTimer.Enabled = true;
+            this.reconnectTimer.Tick += new System.EventHandler(this.reconnectTimer_Tick);
+            // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1425,6 +1431,7 @@
         private System.Windows.Forms.Button button46;
         private System.Windows.Forms.Button button47;
         private System.Windows.Forms.Button button48;
+        private System.Windows.Forms.Timer reconnectTimer;
     }
 }
 
