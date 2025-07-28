@@ -122,10 +122,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -417,7 +413,7 @@
             this.button30.Name = "button30";
             this.button30.Size = new System.Drawing.Size(84, 23);
             this.button30.TabIndex = 88;
-            this.button30.Text = "Calibrar 2.9A";
+            this.button30.Text = "Calibrar 2.94A";
             this.button30.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button30.UseVisualStyleBackColor = true;
             this.button30.Click += new System.EventHandler(this.button30_Click);
@@ -441,7 +437,7 @@
             this.button32.Name = "button32";
             this.button32.Size = new System.Drawing.Size(84, 23);
             this.button32.TabIndex = 86;
-            this.button32.Text = "Calibrar 2.9A";
+            this.button32.Text = "Calibrar 2.94A";
             this.button32.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button32.UseVisualStyleBackColor = true;
             this.button32.Click += new System.EventHandler(this.button32_Click);
@@ -465,7 +461,7 @@
             this.button34.Name = "button34";
             this.button34.Size = new System.Drawing.Size(84, 23);
             this.button34.TabIndex = 84;
-            this.button34.Text = "Calibrar 2.9A";
+            this.button34.Text = "Calibrar 2.94A";
             this.button34.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button34.UseVisualStyleBackColor = true;
             this.button34.Click += new System.EventHandler(this.button34_Click);
@@ -489,7 +485,7 @@
             this.button36.Name = "button36";
             this.button36.Size = new System.Drawing.Size(84, 23);
             this.button36.TabIndex = 82;
-            this.button36.Text = "Calibrar 2.9A";
+            this.button36.Text = "Calibrar 2.94A";
             this.button36.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button36.UseVisualStyleBackColor = true;
             this.button36.Click += new System.EventHandler(this.button36_Click);
@@ -513,7 +509,7 @@
             this.button38.Name = "button38";
             this.button38.Size = new System.Drawing.Size(84, 23);
             this.button38.TabIndex = 80;
-            this.button38.Text = "Calibrar 2.9A";
+            this.button38.Text = "Calibrar 2.94A";
             this.button38.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button38.UseVisualStyleBackColor = true;
             this.button38.Click += new System.EventHandler(this.button38_Click);
@@ -537,7 +533,7 @@
             this.button40.Name = "button40";
             this.button40.Size = new System.Drawing.Size(84, 23);
             this.button40.TabIndex = 78;
-            this.button40.Text = "Calibrar 2.9A";
+            this.button40.Text = "Calibrar 2.94A";
             this.button40.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button40.UseVisualStyleBackColor = true;
             this.button40.Click += new System.EventHandler(this.button40_Click);
@@ -561,7 +557,7 @@
             this.button42.Name = "button42";
             this.button42.Size = new System.Drawing.Size(84, 23);
             this.button42.TabIndex = 76;
-            this.button42.Text = "Calibrar 2.9A";
+            this.button42.Text = "Calibrar 2.94A";
             this.button42.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button42.UseVisualStyleBackColor = true;
             this.button42.Click += new System.EventHandler(this.button42_Click);
@@ -585,7 +581,7 @@
             this.button44.Name = "button44";
             this.button44.Size = new System.Drawing.Size(84, 23);
             this.button44.TabIndex = 74;
-            this.button44.Text = "Calibrar 2.9A";
+            this.button44.Text = "Calibrar 2.94A";
             this.button44.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button44.UseVisualStyleBackColor = true;
             this.button44.Click += new System.EventHandler(this.button44_Click);
@@ -609,7 +605,7 @@
             this.button46.Name = "button46";
             this.button46.Size = new System.Drawing.Size(84, 23);
             this.button46.TabIndex = 72;
-            this.button46.Text = "Calibrar 2.9A";
+            this.button46.Text = "Calibrar 2.94A";
             this.button46.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button46.UseVisualStyleBackColor = true;
             this.button46.Click += new System.EventHandler(this.button46_Click);
@@ -633,7 +629,7 @@
             this.button48.Name = "button48";
             this.button48.Size = new System.Drawing.Size(84, 23);
             this.button48.TabIndex = 70;
-            this.button48.Text = "Calibrar 2.9A";
+            this.button48.Text = "Calibrar 2.94A";
             this.button48.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button48.UseVisualStyleBackColor = true;
             this.button48.Click += new System.EventHandler(this.button48_Click);
@@ -1181,11 +1177,11 @@
             // button3
             // 
             this.button3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.button3.Location = new System.Drawing.Point(293, 43);
+            this.button3.Location = new System.Drawing.Point(98, 48);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(84, 23);
             this.button3.TabIndex = 7;
-            this.button3.Text = "Calibrar 2.9A";
+            this.button3.Text = "Calibrar 2.94A";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -1193,7 +1189,7 @@
             // button4
             // 
             this.button4.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.button4.Location = new System.Drawing.Point(201, 43);
+            this.button4.Location = new System.Drawing.Point(6, 48);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(84, 23);
             this.button4.TabIndex = 6;
@@ -1204,73 +1200,21 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.button7);
-            this.groupBox3.Controls.Add(this.button8);
-            this.groupBox3.Controls.Add(this.button5);
-            this.groupBox3.Controls.Add(this.button6);
             this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Controls.Add(this.button3);
             this.groupBox3.Controls.Add(this.button2);
             this.groupBox3.Controls.Add(this.button4);
-            this.groupBox3.Location = new System.Drawing.Point(12, 325);
+            this.groupBox3.Location = new System.Drawing.Point(204, 325);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(386, 76);
+            this.groupBox3.Size = new System.Drawing.Size(194, 76);
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = " ";
-            // 
-            // button7
-            // 
-            this.button7.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.button7.Location = new System.Drawing.Point(18, 14);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(84, 23);
-            this.button7.TabIndex = 10;
-            this.button7.Text = "Resetar 0V";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // button8
-            // 
-            this.button8.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.button8.Location = new System.Drawing.Point(18, 43);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(84, 23);
-            this.button8.TabIndex = 11;
-            this.button8.Text = "Resetar 0A";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // button5
-            // 
-            this.button5.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.button5.Location = new System.Drawing.Point(110, 14);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(84, 23);
-            this.button5.TabIndex = 8;
-            this.button5.Text = "Resetar 13.3V";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button6
-            // 
-            this.button6.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.button6.Location = new System.Drawing.Point(110, 43);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(84, 23);
-            this.button6.TabIndex = 9;
-            this.button6.Text = "Resetar 2.9A";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.groupBox3.Text = " Calibrar Todos";
             // 
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.button1.Location = new System.Drawing.Point(201, 14);
+            this.button1.Location = new System.Drawing.Point(6, 19);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(84, 23);
             this.button1.TabIndex = 4;
@@ -1282,7 +1226,7 @@
             // button2
             // 
             this.button2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.button2.Location = new System.Drawing.Point(293, 14);
+            this.button2.Location = new System.Drawing.Point(98, 19);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(84, 23);
             this.button2.TabIndex = 5;
@@ -1384,10 +1328,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox groupBox4;
