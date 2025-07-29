@@ -95,31 +95,33 @@ namespace JigaSoftware
 
             MethodInvoker printMessage = delegate ()
             {
+                string msgEnd = serialProtocol.dataFrame[0] < 10 ? ("do canal " + serialProtocol.dataFrame[0].ToString())
+                                                                    : "de todos os canais";
                 switch ((JigaOpcodes)serialProtocol.opCode) 
                 {
                     case JigaOpcodes.CALIBRATE_VOLTAGE_MIN:
-                        txtMessageBox.AppendText(Environment.NewLine + "Calibração 0V do canal " + serialProtocol.dataFrame[0].ToString());
+                        txtMessageBox.AppendText(Environment.NewLine + "Calibração 0V " + msgEnd);
                         break;
                     case JigaOpcodes.CALIBRATE_VOLTAGE_MAX:
-                        txtMessageBox.AppendText(Environment.NewLine + "Calibração 13.3V do canal " + serialProtocol.dataFrame[0].ToString());
+                        txtMessageBox.AppendText(Environment.NewLine + "Calibração 13.3V " + msgEnd);
                         break;
                     case JigaOpcodes.CALIBRATE_CURRENT_MIN:
-                        txtMessageBox.AppendText(Environment.NewLine + "Calibração 0A do canal " + serialProtocol.dataFrame[0].ToString());
+                        txtMessageBox.AppendText(Environment.NewLine + "Calibração 0A " + msgEnd);
                         break;
                     case JigaOpcodes.CALIBRATE_CURRENT_MAX:
-                        txtMessageBox.AppendText(Environment.NewLine + "Calibração 2.94A do canal " + serialProtocol.dataFrame[0].ToString());
+                        txtMessageBox.AppendText(Environment.NewLine + "Calibração 2.94A " + msgEnd);
                         break;
                     case JigaOpcodes.RESET_VOLTAGE_MIN:
-                        txtMessageBox.AppendText(Environment.NewLine + "Reset 0V do canal " + serialProtocol.dataFrame[0].ToString());
+                        txtMessageBox.AppendText(Environment.NewLine + "Reset 0V " + msgEnd);
                         break;
                     case JigaOpcodes.RESET_VOLTAGE_MAX:
-                        txtMessageBox.AppendText(Environment.NewLine + "Reset 13.3V do canal " + serialProtocol.dataFrame[0].ToString());
+                        txtMessageBox.AppendText(Environment.NewLine + "Reset 13.3V " + msgEnd);
                         break;
                     case JigaOpcodes.RESET_CURRENT_MIN:
-                        txtMessageBox.AppendText(Environment.NewLine + "Reset 0A do canal " + serialProtocol.dataFrame[0].ToString());
+                        txtMessageBox.AppendText(Environment.NewLine + "Reset 0A " + msgEnd);
                         break;
                     case JigaOpcodes.RESET_CURRENT_MAX:
-                        txtMessageBox.AppendText(Environment.NewLine + "Reset 2.94A do canal " + serialProtocol.dataFrame[0].ToString());
+                        txtMessageBox.AppendText(Environment.NewLine + "Reset 2.94A " + msgEnd);
                         break;
                     default:
                         txtMessageBox.AppendText(Environment.NewLine + "Mensagem recebida!");
