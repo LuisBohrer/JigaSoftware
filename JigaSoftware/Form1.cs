@@ -43,10 +43,11 @@ namespace JigaSoftware
 
         const UInt16 MIN_BOARD_READ = 0;
         const UInt16 MAX_BOARD_READ = 4095;
+        const UInt16 MAX_BOARD_READ_CURRENT = 2188;
         const float MIN_VOLTAGE_READ = 0.0f;
         const float MAX_VOLTAGE_READ = 13.3f;
         const float MIN_CURRENT_READ = 0.0f;
-        const float MAX_CURRENT_READ = 2944.0f;
+        const float MAX_CURRENT_READ = 1500.0f;
 
         private void SendCommandSerial(byte opcode, params byte[] parametros)
         {
@@ -189,7 +190,7 @@ namespace JigaSoftware
                         }
                         else
                         {
-                            currentReads[i - 10] = changeScales(value, MIN_BOARD_READ, MAX_BOARD_READ, MIN_CURRENT_READ, MAX_CURRENT_READ);
+                            currentReads[i - 10] = changeScales(value, MIN_BOARD_READ, MAX_BOARD_READ_CURRENT, MIN_CURRENT_READ, MAX_CURRENT_READ);
                         }
                     }
                     this.Invoke(updateReads);

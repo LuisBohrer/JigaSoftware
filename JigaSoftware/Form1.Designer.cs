@@ -413,7 +413,7 @@
             this.button30.Name = "button30";
             this.button30.Size = new System.Drawing.Size(84, 23);
             this.button30.TabIndex = 88;
-            this.button30.Text = "Calibrar 2.94A";
+            this.button30.Text = "Calibrar 1.5A";
             this.button30.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button30.UseVisualStyleBackColor = true;
             this.button30.Click += new System.EventHandler(this.button30_Click);
@@ -437,7 +437,7 @@
             this.button32.Name = "button32";
             this.button32.Size = new System.Drawing.Size(84, 23);
             this.button32.TabIndex = 86;
-            this.button32.Text = "Calibrar 2.94A";
+            this.button32.Text = "Calibrar 1.5A";
             this.button32.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button32.UseVisualStyleBackColor = true;
             this.button32.Click += new System.EventHandler(this.button32_Click);
@@ -461,7 +461,7 @@
             this.button34.Name = "button34";
             this.button34.Size = new System.Drawing.Size(84, 23);
             this.button34.TabIndex = 84;
-            this.button34.Text = "Calibrar 2.94A";
+            this.button34.Text = "Calibrar 1.5A";
             this.button34.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button34.UseVisualStyleBackColor = true;
             this.button34.Click += new System.EventHandler(this.button34_Click);
@@ -485,7 +485,7 @@
             this.button36.Name = "button36";
             this.button36.Size = new System.Drawing.Size(84, 23);
             this.button36.TabIndex = 82;
-            this.button36.Text = "Calibrar 2.94A";
+            this.button36.Text = "Calibrar 1.5A";
             this.button36.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button36.UseVisualStyleBackColor = true;
             this.button36.Click += new System.EventHandler(this.button36_Click);
@@ -509,7 +509,7 @@
             this.button38.Name = "button38";
             this.button38.Size = new System.Drawing.Size(84, 23);
             this.button38.TabIndex = 80;
-            this.button38.Text = "Calibrar 2.94A";
+            this.button38.Text = "Calibrar 1.5A";
             this.button38.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button38.UseVisualStyleBackColor = true;
             this.button38.Click += new System.EventHandler(this.button38_Click);
@@ -533,7 +533,7 @@
             this.button40.Name = "button40";
             this.button40.Size = new System.Drawing.Size(84, 23);
             this.button40.TabIndex = 78;
-            this.button40.Text = "Calibrar 2.94A";
+            this.button40.Text = "Calibrar 1.5A";
             this.button40.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button40.UseVisualStyleBackColor = true;
             this.button40.Click += new System.EventHandler(this.button40_Click);
@@ -557,7 +557,7 @@
             this.button42.Name = "button42";
             this.button42.Size = new System.Drawing.Size(84, 23);
             this.button42.TabIndex = 76;
-            this.button42.Text = "Calibrar 2.94A";
+            this.button42.Text = "Calibrar 1.5A";
             this.button42.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button42.UseVisualStyleBackColor = true;
             this.button42.Click += new System.EventHandler(this.button42_Click);
@@ -581,7 +581,7 @@
             this.button44.Name = "button44";
             this.button44.Size = new System.Drawing.Size(84, 23);
             this.button44.TabIndex = 74;
-            this.button44.Text = "Calibrar 2.94A";
+            this.button44.Text = "Calibrar 1.5A";
             this.button44.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button44.UseVisualStyleBackColor = true;
             this.button44.Click += new System.EventHandler(this.button44_Click);
@@ -605,7 +605,7 @@
             this.button46.Name = "button46";
             this.button46.Size = new System.Drawing.Size(84, 23);
             this.button46.TabIndex = 72;
-            this.button46.Text = "Calibrar 2.94A";
+            this.button46.Text = "Calibrar 1.5A";
             this.button46.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button46.UseVisualStyleBackColor = true;
             this.button46.Click += new System.EventHandler(this.button46_Click);
@@ -629,7 +629,7 @@
             this.button48.Name = "button48";
             this.button48.Size = new System.Drawing.Size(84, 23);
             this.button48.TabIndex = 70;
-            this.button48.Text = "Calibrar 2.94A";
+            this.button48.Text = "Calibrar 1.5A";
             this.button48.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button48.UseVisualStyleBackColor = true;
             this.button48.Click += new System.EventHandler(this.button48_Click);
@@ -1181,7 +1181,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(84, 23);
             this.button3.TabIndex = 7;
-            this.button3.Text = "Calibrar 2.94A";
+            this.button3.Text = "Calibrar 2.5A";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
