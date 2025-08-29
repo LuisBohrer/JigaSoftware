@@ -1181,7 +1181,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(84, 23);
             this.button3.TabIndex = 7;
-            this.button3.Text = "Calibrar 2.5A";
+            this.button3.Text = "Calibrar 1.5A";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
